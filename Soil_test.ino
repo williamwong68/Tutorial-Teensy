@@ -1,4 +1,4 @@
-const int ledPin = 11;
+const int ledPin = 12;
 const int soilPin = 20;
 void setup() {
   // put your setup code here, to run once:
@@ -10,11 +10,13 @@ void setup() {
 
 void loop() {
   // put your main code here, to run repeatedly:
-  int val = analogRead(soilPin);
-  Serial.print("Soil: ");
-  Serial.println(val);
-  digitalWrite(ledPin, HIGH);
-  delay(1000);
-  digitalWrite(ledPin, LOW);
-  delay(1000);
+  if(Serial1.available() > 0){
+    int val = analogRead(soilPin);
+    Serial.print("Soil: ");
+    Serial.println(val);
+    digitalWrite(ledPin, HIGH);
+    delay(1000);
+    digitalWrite(ledPin, LOW);
+    delay(1000);
+  }
 }
