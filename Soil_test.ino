@@ -3,6 +3,7 @@ const int soilPin = 20;
 void setup() {
   // put your setup code here, to run once:
   pinMode(ledPin, OUTPUT);
+  # send to monitor
   Serial.begin(9800);
   # Connect to Bluetooth
   Serial1.begin(9600);
@@ -16,9 +17,13 @@ void loop() {
     Serial.println(val);
     Serial1.print("Soil: ");
     Serial1.println(val);
-    digitalWrite(ledPin, HIGH);
-    delay(1000);
-    digitalWrite(ledPin, LOW);
-    delay(1000);
+    if(val < "100"){
+      digitalWrite(ledPin, HIGH);
+      delay(1000);
+    }
+    else if{
+      digitalWrite(ledPin, LOW);
+      delay(1000);
+    }
   }
 }
