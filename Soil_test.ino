@@ -4,6 +4,8 @@ void setup() {
   // put your setup code here, to run once:
   pinMode(ledPin, OUTPUT);
   Serial.begin(9800);
+  # Connect to Bluetooth
+  Serial1.begin(9600);
 }
 
 void loop() {
