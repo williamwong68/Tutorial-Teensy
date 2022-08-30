@@ -14,6 +14,8 @@ void loop() {
     int val = analogRead(soilPin);
     Serial.print("Soil: ");
     Serial.println(val);
+    Serial1.print("Soil: ");
+    Serial1.println(val);
     digitalWrite(ledPin, HIGH);
     delay(1000);
     digitalWrite(ledPin, LOW);
